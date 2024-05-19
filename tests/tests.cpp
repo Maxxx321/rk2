@@ -37,7 +37,7 @@ class ConcreteCreatorMock : public ConcreteCreator1{
 
 TEST(ConcreteCreatorMock, Mock){
     ConcreteCreatorMock creator;
-    ConcreteProduct1 product = new ConcreteProduct1();
+    ConcreteProduct1* product = new ConcreteProduct1();
     EXPECT_EQ(creator.FactoryMethod(), product);
     delete product;
 }
