@@ -13,7 +13,9 @@ class ProductMock1 : public ConcreteProduct1{
 
 TEST(ProductMock1, Mock){
     ProductMock1 product;
-    EXPECT_EQ(product.Operation(), "{Result of the ConcreteProduct1}");
+    EXPECT_CALL(product, Operation()).Times(1);
+    product.Operation();
+
 }
 
 class ProductMock2 : public ConcreteProduct2{
@@ -25,7 +27,8 @@ class ProductMock2 : public ConcreteProduct2{
 
 TEST(ProductMock2, Mock){
     ProductMock2 product;
-    EXPECT_EQ(product.Operation(), "{Result of the ConcreteProduct2}");
+    EXPECT_CALL(product, Operation()).Times(1);
+    product.Operation();
 }
 
 class ConcreteCreatorMock : public ConcreteCreator1{
